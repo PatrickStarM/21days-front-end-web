@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>实用CSS集锦</title>
+    <style>
+      body {
+        background-color: #d2e4da;
+        padding: 10px 10%;
+      }
+      .first-letter {
+        width: 400px;
+      }
+      /* 首字母下沉，伪元素实现 */
+      .first-letter::first-letter {
+        color: pink;
+        float: left;
+        font-size: 5em;
+        margin: 0 0.2em 0 0;
+      }
+      .clear {
+        clear: both;
+      }
+      /* 一定要有宽度 */
+      .box {
+        width: 200px;
+      }
+      /* 单行文本溢出省略 */
+      .single-line {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      /* 多行文本省略 */
+      .multiple-line {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+      }
+      /* 文本选择样式 */
+      ::selection {
+        background: #009a61;
+        color: #fff;
+      }
+      ::-moz-selection {
+        background: #009a61;
+        color: #fff;
+      }
+      ::-webkit-selection {
+        background: #009a61;
+        color: #fff;
+      }
+      /* 切角样式 */
+      .flex {
+        display: flex;
+      }
+      .flex div {
+        width: 150px;
+        height: 150px;
+        margin-right: 10px;
+      }
+      /* 单个切角 */
+      .corner {
+        background: linear-gradient(-45deg, transparent 15px, #5588aa 0);
+      }
+      /* 多个切角 */
+      .corner2 {
+        background: linear-gradient(135deg, transparent 15px, #5588aa 0) top
+            left,
+          linear-gradient(-135deg, transparent 15px, #5588aa 0) top right,
+          linear-gradient(-45deg, transparent 15px, #5588aa 0) bottom right,
+          linear-gradient(45deg, transparent 15px, #5588aa 0) bottom left;
+        background-size: 50% 50%;
+        background-repeat: no-repeat;
+      }
+      /* 弧形切角 */
+      .corner3 {
+        background: radial-gradient(
+              circle at top left,
+              transparent 15px,
+              #58a 0
+            )
+            top left,
+          radial-gradient(circle at top right, transparent 15px, #5588aa 0) top
+            right,
+          radial-gradient(circle at bottom right, transparent 15px, #5588aa 0)
+            bottom right,
+          radial-gradient(circle at bottom left, transparent 15px, #5588aa 0)
+            bottom left;
+        background-size: 50% 50%;
+        background-repeat: no-repeat;
+      }
+      /* 遮罩条样式 */
+
+      .mask {
+        position: relative;
+        width: 150px;
+        height: 150px;
+        overflow: hidden;
+      }
+      .mask img {
+        width: 100%;
+        height: 100%;
+      }
+      .mask:after {
+        content: attr(data-title);
+        position: absolute;
+        width: 100%;
+        /* 100%，很重要 */
+        top: 100%;
+        left: 0;
+        padding: 0.7em 0;
+        text-align: center;
+        color: #fff;
+        background: rgba(0, 0, 0, 0.5);
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+        opacity: 0;
+      }
+      /* 鼠标移动上去时/ */
+      .mask:hover:after {
+        opacity: 1;
+        -webkit-transform: translate(0, -100%);
+        transform: translate(0, -100%);
+      }
+    </style>
+  </head>
+  <body>
+    <p class="first-letter">
+      首字字母下沉非常好用，首字字母下沉非常好用，首字字母下沉非常好用，首字字母下沉非常好用，首字字母下沉非常好用，首字字母下沉非常好用，首字字母下沉非常好用，首字字母下沉非常好用，首字字母下沉非常好用，首字字母下沉非常好用，首字字母下沉非常好用
+    </p>
+    <div class="clear"></div>
+    <hr />
+    <h3 class="single-line box shadow">
+      单行文本省略，非常好用。单行文本省略，非常好用。单行文本省略，非常好用。单行文本省略，非常好用。单行文本省略，非常好用。
+    </h3>
+    <div class="multiple-line box">
+      多行文本省略，非常好用。多行文本省略，非常好用。多行文本省略，非常好用。多行文本省略，非常好用。多行文本省略，非常好用。多行文本省略，非常好用。
+    </div>
+    <hr />
+    <div class="flex">
+      <div class="corner"></div>
+      <div class="corner2"></div>
+      <div class="corner3"></div>
+    </div>
+    <br />
+    <div class="mask" data-title="你好，mth">
+      <img src="me.png" />
+    </div>
+  </body>
+</html>
