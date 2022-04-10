@@ -1,0 +1,24 @@
+.text-pink {
+	color: #fc5c82;
+}
+
+.bg-pink {
+	background-color: #fc5c82;
+}
+
+.bg-pink-disabled {
+	background-color: #fc5c82;
+	opacity: 0.6;
+}
+
+.login-bg {
+	height: 100vh;
+	background: url('/static/img/bg.png') no-repeat;
+	background-size: 100% 100%;
+}
+
+.divider{
+	background: #fff3e0;
+	width: 100%;
+	height: 5rpx;
+}

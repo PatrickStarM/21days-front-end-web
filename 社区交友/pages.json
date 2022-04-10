@@ -1,0 +1,182 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+		    "path" : "pages/index/index",
+		    "style": {
+		    	"enablePullDownRefresh": true,
+		    	"app-plus": {
+		    		"titleNView": {
+		    			"searchInput": {
+		    				"align": "center",
+		    				"backgroundColor": "#fff3e0",
+		    				"borderRadius": "4px",
+		    				"placeholder": "搜索",
+							"disabled": true,
+		    				"placeholderColor": "#6F6C67"
+		    			},
+		    			"buttons": [{
+		    				"color": "#FFFFFF",
+		    				"colorPressed": "#ea6783",
+		    				"float": "right",
+		    				"fontSize": "20px",
+		    				"fontSrc": "/static/font/iconfont.ttf",
+		    				"text": "\ue668"
+		    			}]
+		    		}
+		    	}
+		    }
+		    
+		},
+		{
+			"path": "pages/index-old/index-old",
+			"style": {
+				"enablePullDownRefresh": true,
+				"app-plus": {
+					"titleNView": {
+						"searchInput": {
+							"align": "center",
+							"backgroundColor": "#fff3e0",
+							"borderRadius": "4px",
+							"placeholder": "搜索",
+							"placeholderColor": "#6F6C67"
+						},
+						"buttons": [{
+							"color": "#FFFFFF",
+							"colorPressed": "#ea6783",
+							"float": "right",
+							"fontSize": "20px",
+							"fontSrc": "/static/font/iconfont.ttf",
+							"text": "\ue668"
+						}]
+					}
+				}
+			}
+		}
+	    ,{
+            "path" : "pages/dynamic/dynamic",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "动态",
+                "app-plus": {
+					"titleNView": false
+				}
+            }
+            
+        }
+        ,{
+            "path" : "pages/msg/msg",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/my/my",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        
+        ,{
+            "path" : "pages/search/search",
+            "style": {
+            	"enablePullDownRefresh": false,
+            	"app-plus": {
+            		"titleNView": {
+            			"searchInput": {
+            				"align": "center",
+            				"backgroundColor": "#fff3e0",
+            				"borderRadius": "4px",
+            				"placeholder": "搜索帖子",
+            				"placeholderColor": "#6F6C67"
+            			},
+            			"buttons": [{
+            				"color": "#FFFFFF",
+            				"colorPressed": "#ffcc80",
+            				"float": "right",
+            				"fontSize": "14px",
+            				"text": "搜索"
+            			}]
+            		}
+            	}
+            }
+            
+        }
+        ,{
+            "path" : "pages/write/write",
+            "style" :                                                                                    
+            {
+                "navigationStyle":"custom"
+            }
+            
+        }
+        ,{
+            "path" : "pages/topic-detail/topic-detail",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "话题详情",
+				"app-plus": {
+					"scrollIndicator":"none", //隐藏滚动条
+					"titleNView": {
+						"type":"transparent", //渐变
+						"buttons": [{
+							"type":"menu"
+						}]
+					}
+				}
+            }
+            
+        }
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "我的应用",
+		"navigationBarBackgroundColor": "#ffcc80",
+		"backgroundColor": "#F8F8F8",
+		//横屏配置，全局屏幕旋转设置(仅 APP/微信/QQ小程序)，支持 auto / portrait / landscape
+		"pageOrientation": "portrait",
+		"rpxCalcMaxDeviceWidth": 960,
+		"rpxCalcBaseDeviceWidth": 375,
+		"rpxCalcIncludeWidth": 750
+	},
+	"tabBar": {
+		"color": "#333333",
+		"borderStyle": "black",
+		"selectedColor": "#FC5C82",
+		"backgroundColor": "#ffcc80",
+		"height": "50px",
+		// "fontSize": "10px",
+		"iconWidth": "70px",
+		// "spacing": "3px",
+		"list": [{
+				"pagePath": "pages/index/index",
+				// "text": "首页",
+				"iconPath": "static/tabbar/Home.png"
+				// "selectedIconPath": "static/tabbar/Home.png"
+			},
+			{
+				"pagePath": "pages/dynamic/dynamic",
+				// "text": "动态",
+				"iconPath": "static/tabbar/Magnifier.png"
+				// "selectedIconPath": "static/tabbar/Magnifier.png"
+			},
+			{
+				"pagePath": "pages/msg/msg",
+				// "text": "消息",
+				"iconPath": "static/tabbar/Chat.png"
+				// "selectedIconPath": "static/tabbar/Chat.png"
+			},
+			{
+				"pagePath": "pages/my/my",
+				// "text": "我的",
+				"iconPath": "static/tabbar/Profile.png"
+				// "selectedIconPath": "static/tabbar/Profile.png"
+			}
+		]
+	}
+}
